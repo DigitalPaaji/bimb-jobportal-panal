@@ -28,14 +28,37 @@ import { base_url } from "./store/config";
 type ArticleStatus = "PUBLISHED" | "DRAFT";
 
 type ArticleCategory =
-  | "Sterilization Basics"
-  | "Steam Sterilization"
-  | "ETO Sterilization"
-  | "Plasma Sterilization"
-  | "CSSD Management"
-  | "Infection Control"
-  | "Standards & Guidelines"
-  | "Case Studies";
+  "Information Technology" |
+  "Software Development" |
+  "Data Science & Analytics"|
+  "Engineering"|
+  "Sales"|
+  "Marketing"|
+  "Finance & Accounting"|
+  "Human Resources"|
+  "Customer Support"|
+  "Operations"|
+  "Business Development"|
+  "Project Management"|
+  "Product Management"|
+  "Design & Creative"|
+  "Healthcare"|
+  "Education & Teaching"|
+  "Legal"|
+  "Manufacturing"|
+  "Construction"|
+  "Architecture"|
+  "Banking & Insurance"|
+  "Retail"|
+  "Hospitality & Travel"|
+  "Logistics & Supply Chain"|
+  "Media & Entertainment"|
+  "Real Estate"|
+  "Government & Public Sector"|
+  "Research & Development"|
+  "Administration"|
+  "Other"
+
 
 interface ArticleData {
   title: string;
@@ -70,20 +93,42 @@ interface ErrorResponse {
 ========================= */
 
 const categories: ArticleCategory[] = [
-  "Sterilization Basics",
-  "Steam Sterilization",
-  "ETO Sterilization",
-  "Plasma Sterilization",
-  "CSSD Management",
-  "Infection Control",
-  "Standards & Guidelines",
-  "Case Studies",
+  "Information Technology",
+  "Software Development",
+  "Data Science & Analytics",
+  "Engineering",
+  "Sales",
+  "Marketing",
+  "Finance & Accounting",
+  "Human Resources",
+  "Customer Support",
+  "Operations",
+  "Business Development",
+  "Project Management",
+  "Product Management",
+  "Design & Creative",
+  "Healthcare",
+  "Education & Teaching",
+  "Legal",
+  "Manufacturing",
+  "Construction",
+  "Architecture",
+  "Banking & Insurance",
+  "Retail",
+  "Hospitality & Travel",
+  "Logistics & Supply Chain",
+  "Media & Entertainment",
+  "Real Estate",
+  "Government & Public Sector",
+  "Research & Development",
+  "Administration",
+  "Other"
 ];
 
 const initialArticleData: ArticleData = {
   title: "",
   shortDescription: "",
-  category: "Sterilization Basics",
+  category: "Hospitality & Travel",
   status: "PUBLISHED",
   tags: [],
   image: null,
