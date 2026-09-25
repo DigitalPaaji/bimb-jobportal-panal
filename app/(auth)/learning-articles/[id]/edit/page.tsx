@@ -37,9 +37,9 @@ import { toast } from "react-toastify";
 
 axios.defaults.withCredentials = true;
 
-/* =========================================================
-   TYPES
-========================================================= */
+
+
+
 
 type ArticleStatus = "PUBLISHED" | "DRAFT" | "REJECTED" | string;
 
@@ -109,9 +109,7 @@ const categories: string[] = [
   "Other"
 ];
 
-/* =========================================================
-   COMPONENT
-========================================================= */
+
 
 const ArticleViewPage = () => {
   const params = useParams<{ id: string }>();
@@ -119,9 +117,7 @@ const ArticleViewPage = () => {
 
   const id = params?.id;
 
-  /* =======================================================
-     STATES
-  ======================================================= */
+
 
   const [article, setArticle] = useState<Article | null>(null);
 
@@ -136,9 +132,7 @@ const ArticleViewPage = () => {
 
   const [tagInput, setTagInput] = useState<string>("");
 
-  /* =========================================================
-     FETCH ARTICLE
-  ========================================================= */
+
 
   const fetchData = async (): Promise<void> => {
     if (!id) return;
@@ -184,9 +178,7 @@ const ArticleViewPage = () => {
     }
   };
 
-  /* =========================================================
-     EFFECT
-  ========================================================= */
+
 
   useEffect(() => {
     if (id) {
@@ -194,9 +186,7 @@ const ArticleViewPage = () => {
     }
   }, [id]);
 
-  /* =========================================================
-     IMAGE URL
-  ========================================================= */
+
 
   const getImageUrl = (
     url?: string | null
@@ -1282,7 +1272,16 @@ const ArticleViewPage = () => {
                       {/* Description */}
 
                       <div
-                        className="prose prose-sm max-w-none leading-7 text-gray-700 "
+                        className=" text-gray-700 text-base leading-7 break-words
+  [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mb-4
+  [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-gray-900 [&_h2]:mt-8 [&_h2]:mb-3
+  [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-6 [&_h3]:mb-2
+  [&_p]:mb-4
+  [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul]:space-y-1
+  [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4 [&_ol]:space-y-1
+  [&_a]:text-blue-600 [&_a]:underline
+  [&_img]:max-w-full [&_img]:rounded-lg [&_img]:my-4
+  [&_table]:w-full [&_table]:border [&_th]:border [&_td]:border [&_th]:p-2 [&_td]:p-2"
                         dangerouslySetInnerHTML={{
                           __html:
                             section.des || "",

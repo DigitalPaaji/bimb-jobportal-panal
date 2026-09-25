@@ -13,7 +13,7 @@ import axios, {
   AxiosError,
 } from "axios";
 
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 import {
   FaCloudUploadAlt,
@@ -26,6 +26,9 @@ import {
 import { MdCancel } from "react-icons/md";
 
 import { toast } from "react-toastify";
+import Link from "next/link";
+import { BsBack } from "react-icons/bs";
+import { BiArrowBack } from "react-icons/bi";
 
 axios.defaults.withCredentials = true;
 
@@ -67,7 +70,7 @@ interface ArticleFormData {
 
 const Page = () => {
   const params = useParams<{ id: string }>();
-
+  const router = useRouter();
   const id = params?.id;
 
   // ======================================================
@@ -466,22 +469,19 @@ const Page = () => {
           <div>
             <div className="flex items-center gap-3">
 
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-black text-white  ">
-                {editingId ? (
-                  <FaEdit size={18} />
-                ) : (
-                  <FaPlus size={18} />
-                )}
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-black text-white  ">
+              <BiArrowBack />
               </div>
 
               <div>
-                <h1 className="text-xl font-bold sm:text-2xl">
-                  Article Content
-                </h1>
+               <button
+      onClick={() => router.back()}
+      className="text-xl font-bold sm:text-2xl"
+    >
+      Back
+    </button>
 
-                <p className="text-sm text-gray-500 ">
-                  Manage your article sections
-                </p>
+                
               </div>
 
             </div>
@@ -655,7 +655,16 @@ const Page = () => {
                           <td className="px-5 py-4">
 
                             <div
-                              className="prose prose-sm line-clamp-2 max-w-[350px] text-gray-600  "
+                              className=" text-gray-700 text-base leading-7 break-words
+  [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-gray-900 [&_h1]:mb-4
+  [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-gray-900 [&_h2]:mt-8 [&_h2]:mb-3
+  [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-gray-800 [&_h3]:mt-6 [&_h3]:mb-2
+  [&_p]:mb-4
+  [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul]:space-y-1
+  [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4 [&_ol]:space-y-1
+  [&_a]:text-blue-600 [&_a]:underline
+  [&_img]:max-w-full [&_img]:rounded-lg [&_img]:my-4
+  [&_table]:w-full [&_table]:border [&_th]:border [&_td]:border [&_th]:p-2 [&_td]:p-2"
                               dangerouslySetInnerHTML={{
                                 __html:
                                   item.des || "",
