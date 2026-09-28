@@ -308,9 +308,10 @@ formData.append("image",jobData.image)
         router.push("/jobs")
       }else{
         toast.error(data.message)
-
+        
       }
-      } catch (error) {
+    } catch (error) {
+        toast.error(error?.response?.data?.message)
              setLoading(false);
       }finally{
          setLoading(false);
@@ -419,6 +420,10 @@ formData.append("image",jobData.image)
                       onChange={handleInput}
                       className={`${inputClass} appearance-none`}
                     >
+
+                       <option disabled>
+                        --select job type ---
+                      </option>
                       <option value="FULL_TIME">
                         Full Time
                       </option>
@@ -459,6 +464,9 @@ formData.append("image",jobData.image)
                       onChange={handleInput}
                       className={`${inputClass} appearance-none`}
                     >
+                       <option disabled>
+                        --select Work Mode ---
+                      </option>
                       <option value="ONSITE">
                         Onsite
                       </option>
