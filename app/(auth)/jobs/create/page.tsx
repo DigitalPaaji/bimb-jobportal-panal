@@ -310,7 +310,7 @@ formData.append("image",jobData.image)
         toast.error(data.message)
         
       }
-    } catch (error) {
+    } catch (error : any) {
         toast.error(error?.response?.data?.message)
              setLoading(false);
       }finally{
