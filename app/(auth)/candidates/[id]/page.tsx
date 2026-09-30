@@ -182,7 +182,7 @@ const Page = () => {
       return resume;
     }
 
-    return `${base_url}${resume}`;
+    return `${img_url}${resume}`;
   };
 
   const formatDate = (date: string | null) => {
