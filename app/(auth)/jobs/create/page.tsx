@@ -22,7 +22,7 @@ const [allSubCategory,setAllSubCategory]=useState([])
     const [question,setQuestion]=useState("")
 
 
-const [jobData,setJobData]=useState({  title:"",description:"",jobType:"",workMode:"ONSITE",companyName:"",companyWebsite:"",
+const [jobData,setJobData]=useState({  title:"",description:"",jobType:"FULL_TIME",workMode:"ONSITE",companyName:"",companyWebsite:"",
        image:null,category:"",subcategory:"", location: {city: "",state:"",country:"",address: "",},
        experience:{min:"",max:""},salary:{min:"",max:"",currency:"INR",period:"YEARLY"},skills:[],
        education:[],responsibilities:[],requirements:[],benefits:[],questions:[],
@@ -421,7 +421,7 @@ formData.append("image",jobData.image)
                       className={`${inputClass} appearance-none`}
                     >
 
-                       <option disabled>
+                       <option disabled value={""}>
                         --select job type ---
                       </option>
                       <option value="FULL_TIME">
@@ -638,10 +638,14 @@ formData.append("image",jobData.image)
               <div>
                 <label className={labelClass}>
                   Subcategory
+                    <span className="ml-1 text-red-500">
+                    *
+                  </span>
                 </label>
 
                 <div className="relative">
                   <select
+                  required
                     name="subcategory"
                     value={jobData.subcategory}
                     onChange={handleInput}

@@ -25,10 +25,36 @@ import { toast } from "react-toastify";
 
 
 const categorySelect: string[] = [
-  "CSSD Technician",
-  "CSSD Supervisor",
-  "CSSD Manager",
-  "Infection Control Professional",
+  "Information Technology",
+  "Software Development",
+  "Data Science & Analytics",
+  "Engineering",
+  "Sales",
+  "Marketing",
+  "Finance & Accounting",
+  "Human Resources",
+  "Customer Support",
+  "Operations",
+  "Business Development",
+  "Project Management",
+  "Product Management",
+  "Design & Creative",
+  "Healthcare",
+  "Education & Teaching",
+  "Legal",
+  "Manufacturing",
+  "Construction",
+  "Architecture",
+  "Banking & Insurance",
+  "Retail",
+  "Hospitality & Travel",
+  "Logistics & Supply Chain",
+  "Media & Entertainment",
+  "Real Estate",
+  "Government & Public Sector",
+  "Research & Development",
+  "Administration",
+  "Other"
 ];
 
 interface NewsData {
